@@ -1,0 +1,19 @@
+Q-style Miku assets:
+
+- github-chibi-miku-icon.png
+
+Source repository:
+https://github.com/Orange0w0/Chibi-style-Miku-Watchface-for-Xiaomi-Smart-Band-9-Pro_AstroBox_Release
+
+Downloaded from the repository's "Q版初音未来表盘 for 小米手环9 Pro/icon.png" file.
+
+Anime desk-pet assets:
+
+- anime-pet-anya-spritesheet.webp
+- anime-pet-anya-preview.png
+- anya-*-strip.png
+
+Source repository:
+https://github.com/chenxin-dlut/codex-anime-pets
+
+The page uses cropped transparent strips from the Anya pet spritesheet for idle, run, wave, cheer, sleepy, surprise, happy, dash, and shy states.

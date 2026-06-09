@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AmpSys Cadence Plugin 下载</title>
+    <meta
+      name="description"
+      content="AmpSys Cadence Plugin release 下载页，面向 Cadence Virtuoso schematic 的电路尺寸优化插件。"
+    />
+    <link rel="stylesheet" href="./styles.css?v=anime-states-20260609g" />
+    <script src="./vendor/lucide/lucide.min.js" defer></script>
+    <script src="./app.js?v=anime-states-20260609g" defer></script>
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true">
+      <div class="bg-rings ring-one"></div>
+      <div class="bg-rings ring-two"></div>
+      <div class="bg-rings ring-three"></div>
+      <div class="bg-slash slash-one"></div>
+      <div class="bg-slash slash-two"></div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AmpSys 下载页首页">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">AmpSys</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <button class="nav-button" type="button" data-scroll-target="download">
+          <i data-lucide="download" aria-hidden="true"></i>
+          <span>下载</span>
+        </button>
+        <button class="nav-button" type="button" data-scroll-target="install">
+          <i data-lucide="terminal" aria-hidden="true"></i>
+          <span>安装</span>
+        </button>
+        <button class="nav-button" type="button" data-scroll-target="workflow">
+          <i data-lucide="workflow" aria-hidden="true"></i>
+          <span>流程</span>
+        </button>
+        <button class="nav-button" type="button" data-scroll-target="support">
+          <i data-lucide="heart-handshake" aria-hidden="true"></i>
+          <span>反馈</span>
+        </button>
+      </nav>
+      <button class="icon-button" type="button" id="themeButton" title="切换主题" aria-label="切换主题">
+        <i data-lucide="moon-star" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Cadence Virtuoso schematic optimizer</p>
+          <h1>AmpSys Cadence Plugin</h1>
+          <p class="lead">
+            面向 Virtuoso 原理图的电路尺寸优化插件。导出当前 schematic netlist，配置 LUT cache、
+            器件电流和优化指标，再将优化结果回填到 schematic。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="https://github.com/KonataLin/AmpSysDownloadPage/releases/download/v1.0.0/AmpSysCadencePlugin_release.zip" download data-download="release">
+              <i data-lucide="download" aria-hidden="true"></i>
+              下载 Release ZIP
+            </a>
+            <button class="ghost-button" type="button" data-scroll-target="install">
+              <i data-lucide="book-open-check" aria-hidden="true"></i>
+              查看安装命令
+            </button>
+          </div>
+          <div class="support-row" aria-label="支持平台">
+            <span>Windows x86_64</span>
+            <span>Linux x86_64</span>
+            <span>glibc >= 2.17</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="AmpSys 插件界面示意图">
+          <button class="anime-character hero-character anime-state-idle" type="button" data-anime-pop data-default-state="idle" data-anime-tip="Anya 已经就位" aria-label="Anya 看板娘">
+            <span class="anime-sprite" aria-hidden="true"></span>
+          </button>
+          <div class="gui-mock" aria-hidden="true">
+            <div class="gui-header">
+              <div class="gui-accent"></div>
+              <div>
+                <strong>AmpSys</strong>
+                <span>Cadence schematic optimizer</span>
+              </div>
+              <div class="gui-mode">Windows LUT Builder</div>
+              <div class="gui-actions">
+                <span>Open Workspace</span>
+                <span>Load Project</span>
+                <span>Save Project</span>
+              </div>
+            </div>
+            <div class="gui-flow">
+              <span><b>OK</b>LUT Cache</span>
+              <span><b>OK</b>Devices</span>
+              <span><b>OK</b>Specs</span>
+              <span><b>NO</b>Run</span>
+              <span><b>NO</b>Results</span>
+            </div>
+            <div class="gui-body">
+              <section class="gui-panel lut-panel">
+                <h3>LUT Cache</h3>
+                <label>Cache dir</label>
+                <div class="gui-input wide"></div>
+                <label>NMOS / PMOS</label>
+                <div class="gui-row">
+                  <div class="gui-input"></div>
+                  <div class="gui-input"></div>
+                </div>
+                <label>Corner / Temp / VDD</label>
+                <div class="gui-row three">
+                  <div class="gui-input"></div>
+                  <div class="gui-input"></div>
+                  <div class="gui-input"></div>
+                </div>
+              </section>
+              <section class="gui-panel device-panel">
+                <h3>Device Currents</h3>
+                <div class="gui-toolbar">
+                  <span>Add MOS</span>
+                  <span>Set All</span>
+                  <span>Id uA</span>
+                </div>
+                <div class="gui-table">
+                  <div>Name</div><div>Type</div><div>D/G/S/B</div><div>Id uA</div>
+                  <div>M1</div><div>nmos</div><div>out/in/gnd/gnd</div><div>80</div>
+                  <div>M2</div><div>pmos</div><div>out/in/vdd/vdd</div><div>80</div>
+                  <div>M3</div><div>nmos</div><div>tail/vb/gnd/gnd</div><div>120</div>
+                </div>
+              </section>
+              <section class="gui-panel specs-panel">
+                <h3>Specs & Optimization</h3>
+                <div class="spec-grid">
+                  <span>Gain min dB</span><b>60</b>
+                  <span>GBW MHz</span><b>20</b>
+                  <span>PM min deg</span><b>60</b>
+                  <span>Load cap pF</span><b>5</b>
+                </div>
+                <button class="gui-run" type="button" tabindex="-1">Run Optimization</button>
+                <div class="gui-progress"><i></i></div>
+              </section>
+              <section class="gui-panel result-panel">
+                <h3>Results & Cadence Writeback</h3>
+                <div class="metric-line">Gain 64.2 dB · GBW 23.8 MHz · PM 68.5 deg</div>
+                <div class="mini-chart"><i></i><i></i><i></i><i></i><i></i></div>
+                <button class="gui-apply" type="button" tabindex="-1">Confirm and Apply in Cadence</button>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="download section-shell" id="download">
+        <article class="download-card reveal">
+          <button class="anime-character download-character anime-state-run-right" type="button" data-anime-pop data-default-state="run-right" data-anime-tip="Release ZIP 准备好啦" aria-label="下载区 Anya 小助手">
+            <span class="anime-sprite" aria-hidden="true"></span>
+          </button>
+          <div>
+            <p class="eyebrow">Release package</p>
+            <h2>AmpSysCadencePlugin_release.zip</h2>
+            <p>
+              包含 CLI、SKILL 菜单、环境检查工具、安装脚本，以及已打包的 Windows / Linux 私有优化核心。
+            </p>
+          </div>
+          <div class="release-meta">
+            <span data-release-size>版本包大小：231.7 MiB</span>
+            <span data-release-updated>构建时间：2026-06-08 22:41:59</span>
+            <span>核心：Windows AMD64 / Linux x86_64</span>
+          </div>
+          <a class="primary-button" href="https://github.com/KonataLin/AmpSysDownloadPage/releases/download/v1.0.0/AmpSysCadencePlugin_release.zip" download data-download="release">
+            <i data-lucide="package-down" aria-hidden="true"></i>
+            下载完整发布包
+          </a>
+        </article>
+      </section>
+
+      <section class="install section-shell" id="install">
+        <div class="section-heading reveal">
+          <h2>安装</h2>
+          <p>解压整个 release 目录，不要只复制单个可执行文件。正常情况下 PluginRoot 和 EngineRoot 指向同一目录。</p>
+        </div>
+        <div class="command-grid">
+          <article class="command-card reveal">
+            <div class="card-head">
+              <h3>Windows</h3>
+              <button class="copy-button" type="button" data-copy="windowsInstall" title="复制命令">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <pre id="windowsInstall"><code>powershell -ExecutionPolicy Bypass -File &lt;plugin-root&gt;\install_windows.ps1 `
+  -PluginRoot &lt;plugin-root&gt; `
+  -EngineRoot &lt;plugin-root&gt;
+py -3 &lt;plugin-root&gt;\tools\check_environment.py</code></pre>
+          </article>
+          <article class="command-card reveal">
+            <div class="card-head">
+              <h3>Linux / Virtuoso</h3>
+              <button class="copy-button" type="button" data-copy="linuxInstall" title="复制命令">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <pre id="linuxInstall"><code>bash /opt/AmpSysCadencePlugin/install_linux.sh \
+  /opt/AmpSysCadencePlugin \
+  /opt/AmpSysCadencePlugin \
+  ~/.cdsinit
+source ~/.bashrc
+py -3 /opt/AmpSysCadencePlugin/tools/check_environment.py</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow section-shell" id="workflow">
+        <div class="section-heading reveal">
+          <h2>使用流程</h2>
+          <p>页面只保留下载前最关键的路径，完整细节在压缩包内的 Usage.md。</p>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-card reveal">
+            <span>01</span>
+            <h3>Windows 建 LUT cache</h3>
+            <p>用 HSPICE 建好完整 cache 目录，包含 pkl 和对应数据目录。</p>
+          </article>
+          <article class="flow-card reveal">
+            <span>02</span>
+            <h3>复制到 Linux</h3>
+            <p>复制整个 cache 目录到 Virtuoso 可访问的位置，不沿用 Windows 盘符路径。</p>
+          </article>
+          <article class="flow-card reveal">
+            <span>03</span>
+            <h3>从 Virtuoso 提取</h3>
+            <p>打开真正包含 MOS 的 schematic，点击 AmpSys 菜单提取当前原理图。</p>
+          </article>
+          <article class="flow-card reveal">
+            <span>04</span>
+            <h3>运行并回填</h3>
+            <p>填写器件 Id 和 specs，Run Optimization 后确认回填到 Cadence。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="notes section-shell reveal">
+        <h2>支持范围</h2>
+        <ul>
+          <li>支持 Windows x86_64，以及 Linux x86_64 + glibc >= 2.17。</li>
+          <li>不支持 ARM、macOS、Alpine/musl、glibc < 2.17 或 32-bit 系统。</li>
+          <li>不要发布源码目录：AmpSys、yami、TheScanner、acsolver 等内部包已封装进 core。</li>
+        </ul>
+      </section>
+
+      <section class="support section-shell reveal" id="support">
+        <button class="anime-character support-character anime-state-wave" type="button" data-anime-pop data-default-state="wave" data-anime-tip="反馈和赞助入口在这里" aria-label="反馈区 Anya 小助手">
+          <span class="anime-sprite" aria-hidden="true"></span>
+        </button>
+        <div class="section-heading">
+          <h2>反馈与赞助</h2>
+          <p>遇到安装、Cadence 菜单或优化结果问题，可以直接去 Issues；如果这个工具帮你节省了调参时间，也可以去赞助页支持一下。</p>
+        </div>
+        <div class="support-grid">
+          <a class="support-card" href="https://github.com/KonataLin/AmpSysCadencePlugin/issues" target="_blank" rel="noreferrer">
+            <i data-lucide="message-circle-warning" aria-hidden="true"></i>
+            <span>问题反馈</span>
+            <strong>GitHub Issues</strong>
+          </a>
+          <a class="support-card sponsor-card" href="https://www.afdian.com/a/LocyDragon" target="_blank" rel="noreferrer">
+            <i data-lucide="sparkles" aria-hidden="true"></i>
+            <span>赞助支持</span>
+            <strong>爱发电 LocyDragon</strong>
+          </a>
+          <a class="support-card" href="https://github.com/KonataLin/AmpSysCadencePlugin" target="_blank" rel="noreferrer">
+            <i data-lucide="github" aria-hidden="true"></i>
+            <span>项目主页</span>
+            <strong>KonataLin/AmpSysCadencePlugin</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>AmpSys Cadence Plugin</strong>
+        <span>Release download page · Built for Virtuoso schematic optimization</span>
+      </div>
+      <p class="asset-credit">
+        Q版桌宠素材：
+        <a href="https://github.com/Orange0w0/Chibi-style-Miku-Watchface-for-Xiaomi-Smart-Band-9-Pro_AstroBox_Release" target="_blank" rel="noreferrer">Orange0w0 / Chibi-style Miku Watchface</a>
+        · Anya 桌宠素材：
+        <a href="https://github.com/chenxin-dlut/codex-anime-pets" target="_blank" rel="noreferrer">chenxin-dlut / codex-anime-pets</a>
+        · 视觉参考：
+        <a href="https://www.bakaxl.com/" target="_blank" rel="noreferrer">BakaXL</a>
+      </p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <button class="miku-pet" id="mikuPet" type="button" aria-label="Q版初音未来桌宠，点击摸头">
+      <span class="pet-shadow" aria-hidden="true"></span>
+      <img src="./assets/illustrations/github-chibi-miku-icon.png" alt="" />
+      <div class="miku-tip" id="mikuTip">摸摸头试试</div>
+    </button>
+
+  </body>
+</html>
