@@ -1,9 +1,9 @@
 const downloadUrls = {
-  release: "https://github.com/KonataLin/AmpSysDownloadPage/releases/download/v1.0.0/AmpSysCadencePlugin_release.zip"
+  release: "https://github.com/KonataLin/AmpSysDownloadPage/releases/download/v0.1.0-alpha.9/AmpSysCadencePlugin_release_alpha9_clean_cross_pdk_20260727.zip"
 };
 
-const releaseApiUrl = "https://api.github.com/repos/KonataLin/AmpSysDownloadPage/releases/tags/v1.0.0";
-const releaseAssetName = "AmpSysCadencePlugin_release.zip";
+const releaseApiUrl = "https://api.github.com/repos/KonataLin/AmpSysDownloadPage/releases/tags/v0.1.0-alpha.9";
+const releaseAssetName = "AmpSysCadencePlugin_release_alpha9_clean_cross_pdk_20260727.zip";
 
 const root = document.documentElement;
 const toast = document.querySelector("#toast");
